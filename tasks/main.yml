@@ -1,0 +1,31 @@
+---
+
+- name: dnsmasq | Install
+  package:
+    name: dnsmasq
+    state: present
+
+- name: set /etc/resolv.conf
+  copy:
+    dest: /etc/resolv1.conf
+    content: |
+      nameserver 127.0.0.1
+
+- name: create /etc/resolv.dnsmasq
+  template:
+    src: etc/resolv.dnsmasq.j2
+    dest: /etc/resolv.dnsmasq
+  notify: restart dnsmasq
+
+- name: create /etc/dnsmasq.conf
+  template:
+    src: etc/dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+  notify: restart dnsmasq
+
+- name: start and enable dnsmasq
+  systemd:
+    daemon_reload: yes
+    name: dnsmasq
+    state: started
+    enabled: true
