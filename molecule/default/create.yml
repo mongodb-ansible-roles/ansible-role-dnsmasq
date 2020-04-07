@@ -25,6 +25,8 @@
         to_port: 0
         cidr_ip: "0.0.0.0/0"
 
+    vpc_id: vpc-02e31e3c5f1d53dd2
+
     keypair_name: molecule_key-{{ ansible_date_time.epoch }}
     keypair_path: "{{ lookup('env', 'MOLECULE_EPHEMERAL_DIRECTORY') }}/ssh_key"
   tasks:
@@ -34,6 +36,7 @@
         description: "{{ security_group_name }}"
         rules: "{{ security_group_rules }}"
         rules_egress: "{{ security_group_rules_egress }}"
+        vpc_id: "{{ vpc_id }}"
 
     - name: Test for presence of local keypair
       stat:

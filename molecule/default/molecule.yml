@@ -12,7 +12,7 @@ platforms:
   - name: ubuntu1804
     image: ami-0a4f4704a9146742a
     instance_type: t2.small
-    vpc_subnet_id: subnet-50f3fe0a
+    vpc_subnet_id: subnet-0fdf330139d3de49f
 provisioner:
   log: true
   name: ansible
