@@ -7,7 +7,7 @@
 
 - name: set /etc/resolv.conf
   copy:
-    dest: /etc/resolv1.conf
+    dest: /etc/resolv.conf
     content: |
       nameserver 127.0.0.1
 
