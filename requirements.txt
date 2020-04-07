@@ -1,6 +1,7 @@
 docker
 molecule==3.0.2
 molecule[docker]
+molecule-ec2
 ansible-lint==4.2.0
 flake8==3.7.9
 testinfra==4.1.0
