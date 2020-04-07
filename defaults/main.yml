@@ -1,6 +1,5 @@
 ---
-
 # Upstream servers to use.
-dnsmasq_upstream_servers: [ 8.8.8.8, 8.8.4.4, 64.6.64.6, 64.6.65.6 ]
+dnsmasq_upstream_servers: [8.8.8.8, 8.8.4.4, 64.6.64.6, 64.6.65.6]
 
 dnsmasq_user: "root"
