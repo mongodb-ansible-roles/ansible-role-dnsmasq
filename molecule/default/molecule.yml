@@ -13,6 +13,10 @@ platforms:
     image: ami-0a4f4704a9146742a
     instance_type: t2.small
     vpc_subnet_id: subnet-0fdf330139d3de49f
+  - name: rhel8
+    image: ami-0551d2acb56d6e88c
+    instance_type: t2.small
+    vpc_subnet_id: subnet-0fdf330139d3de49f
 provisioner:
   log: true
   name: ansible
