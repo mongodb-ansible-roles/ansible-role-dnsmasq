@@ -10,3 +10,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_dnsmasq_service(host):
     assert host.service("dnsmasq").is_running
     assert host.service("dnsmasq").is_enabled
+    result = host.run("journalctl -xeu dnsmasq --no-pager")
+    assert result.succeeded
+    assert "reading /etc/resolv.dnsmasq" in result.stdout

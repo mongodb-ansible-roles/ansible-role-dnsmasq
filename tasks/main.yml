@@ -22,9 +22,13 @@
     dest: /etc/dnsmasq.conf
   notify: restart dnsmasq
 
+  # The dnsmasq service is already started when installed via a package
+  # manager. It is required to restart the service to ensure that the
+  # service uses the proper configuration file.
 - name: start and enable dnsmasq
   systemd:
     daemon_reload: true
     name: dnsmasq
-    state: started
+    state: restarted
     enabled: true
+  changed_when: false
