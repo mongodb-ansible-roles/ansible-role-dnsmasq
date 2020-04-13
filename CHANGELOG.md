@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.1.0...v1.1.1) (2020-04-13)
+
+
+### Bug Fixes
+
+* restart dnsmasq to honor configuration file ([#3](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/issues/3)) ([e81f362](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/e81f362c257d5ad8e492ad1546ee7cf19747eaed))
+
 # [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.0.0...v1.1.0) (2020-04-13)
 
 
