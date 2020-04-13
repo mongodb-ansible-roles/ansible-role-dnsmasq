@@ -108,14 +108,14 @@
       set_fact:
         instance_conf_dict:
           {
-            "instance": "{{ item.instances[0].tags.instance }}",
-            "address": "{{ item.instances[0].public_ip }}",
-            "user": "{{ ssh_user }}",
+            "instance": "{{ item.1.instances[0].tags.instance }}",
+            "address": "{{ item.1.instances[0].public_ip }}",
+            "user": "{{ molecule_yml.platforms[item.0].ssh_username }}",
             "port": "{{ ssh_port }}",
             "identity_file": "{{ keypair_path }}",
-            "instance_ids": "{{ item.instance_ids }}",
+            "instance_ids": "{{ item.1.instance_ids }}",
           }
-      with_items: "{{ ec2_jobs.results }}"
+      with_indexed_items: "{{ ec2_jobs.results }}"
       register: instance_config_dict
       when: server.changed | bool
 

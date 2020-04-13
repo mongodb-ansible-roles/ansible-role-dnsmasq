@@ -7,3 +7,11 @@
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal python-zipstream)
       become: true
       changed_when: false
+      ignore_errors: true
+
+    - name: Install python for Ansible
+      raw: |
+        yum -y update && yum -y install python3 && alternatives --set python /usr/bin/python3
+      become: true
+      changed_when: false
+      ignore_errors: true
