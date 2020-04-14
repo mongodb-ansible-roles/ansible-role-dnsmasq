@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.1.1...v1.2.0) (2020-04-14)
+
+
+### Features
+
+* add more configuration options for dnsmasq ([bc91663](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/bc916634d190620ef366183c01c04a8666d3f164))
+
 ## [1.1.1](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.1.0...v1.1.1) (2020-04-13)
 
 
