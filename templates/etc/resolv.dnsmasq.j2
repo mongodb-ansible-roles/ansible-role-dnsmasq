@@ -3,6 +3,6 @@
 # Do not edit, changes will be overwritten
 #
 
-{% for server in dnsmasq_upstream_servers %}
-nameserver {{ server }}
+{% for nameserver in dnsmasq_nameservers %}
+nameserver {{ nameserver }}
 {% endfor %}
