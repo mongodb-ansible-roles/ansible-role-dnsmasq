@@ -114,6 +114,7 @@
             "port": "{{ ssh_port }}",
             "identity_file": "{{ keypair_path }}",
             "instance_ids": "{{ item.1.instance_ids }}",
+            "key_name": "{{ keypair_name }}"
           }
       with_indexed_items: "{{ ec2_jobs.results }}"
       register: instance_config_dict

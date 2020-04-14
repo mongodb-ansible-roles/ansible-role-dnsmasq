@@ -1,34 +1,64 @@
 ---
-- name: dnsmasq | Install
+- name: Install dnsmasq
   package:
     name: dnsmasq
     state: present
 
-- name: set /etc/resolv.conf
-  copy:
-    dest: /etc/resolv.conf
-    content: |
-      nameserver 127.0.0.1
+- name: Create dnsmasq group
+  group:
+    name: "{{ dnsmasq_group }}"
+    state: present
 
-- name: create /etc/resolv.dnsmasq
-  template:
-    src: etc/resolv.dnsmasq.j2
-    dest: /etc/resolv.dnsmasq
-  notify: restart dnsmasq
+- name: Create dnsmasq pid file
+  file:
+    group: dnsmasq
+    owner: dnsmasq
+    path: /run/dnsmasq/dnsmasq.pid
+    state: file
+  when: ansible_os_family == "Debian"
 
-- name: create /etc/dnsmasq.conf
+- name: Create dnsmasq user
+  user:
+    create_home: false
+    group: "{{ dnsmasq_group }}"
+    name: "{{ dnsmasq_user }}"
+    state: present
+    system: true
+
+- name: Create /etc/dnsmasq.conf
   template:
-    src: etc/dnsmasq.conf
+    backup: true
     dest: /etc/dnsmasq.conf
-  notify: restart dnsmasq
+    src: etc/dnsmasq.conf
+  notify:
+    - restart dnsmasq
+
+- name: Create /etc/resolv.dnsmasq
+  template:
+    dest: /etc/resolv.dnsmasq
+    src: etc/resolv.dnsmasq.j2
+  notify:
+    - restart dnsmasq
 
   # The dnsmasq service is already started when installed via a package
   # manager. It is required to restart the service to ensure that the
   # service uses the proper configuration file.
-- name: start and enable dnsmasq
+- name: Enable and start dnsmasq
   systemd:
     daemon_reload: true
+    enabled: true
     name: dnsmasq
     state: restarted
-    enabled: true
   changed_when: false
+
+- name: Configure the default DNS resolver as a fallback option
+  blockinfile:
+    block: supersede domain-name-servers 127.0.0.1, 169.254.169.253;
+    insertafter: EOF
+    path: /etc/dhcp/dhclient.conf
+    state: present
+
+- name: Apply changes to dhclient
+  command: dhclient
+  changed_when: false
+  ignore_errors: true

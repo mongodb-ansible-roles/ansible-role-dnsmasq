@@ -34,6 +34,12 @@
       retries: 300
       with_items: "{{ server.results }}"
 
+    - name: Delete remote keypair
+      ec2_key:
+        name: "{{ item.key_name }}"
+        state: absent
+      with_items: "{{ instance_conf }}"
+
     # Mandatory configuration for Molecule to function.
 
     - name: Populate instance config

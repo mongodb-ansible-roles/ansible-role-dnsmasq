@@ -1,9 +1,15 @@
 ---
-# Upstream servers to use.
+dnsmasq_bind_interfaces: true
+dnsmasq_bogus_priv: true
+dnsmasq_cache_size: 500
+dnsmasq_domain_needed: true
+dnsmasq_group: dnsmasq
+dnsmasq_listen_address: 127.0.0.1
 dnsmasq_nameservers:
   - 8.8.8.8
   - 8.8.4.4
   - 64.6.64.6
   - 64.6.65.6
-
-dnsmasq_user: root
+dnsmasq_neg_ttl: 60
+dnsmasq_port: 53
+dnsmasq_user: dnsmasq
