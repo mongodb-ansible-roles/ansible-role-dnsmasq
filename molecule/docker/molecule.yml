@@ -4,10 +4,14 @@ dependency:
 driver:
   name: docker
 platforms:
-  - command: /sbin/init
-    image: ppc64le/centos:8
+  - capabilities:
+      - SYS_ADMIN
+    command: /sbin/init
+    dockerfile: dockerfiles/Docker.ppc64le
+    image: ppc64le/centos
     name: instance
-    pre_build_image: true
+    pre_build_image: false
+    privileged: true
     tmpfs:
       - /run
       - /tmp

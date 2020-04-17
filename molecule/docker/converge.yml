@@ -4,4 +4,4 @@
   tasks:
     - name: "Include ansible-role-dnsmasq"
       include_role:
-        name: "ansible-role-dnsmasq"
+        name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"
