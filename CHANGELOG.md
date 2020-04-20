@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.2.0...v1.3.0) (2020-04-20)
+
+
+### Features
+
+* add CentOS 8 ppc64le platform ([#4](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/issues/4)) ([47f83eb](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/47f83eb213818025ed42270018370119e2a1117a))
+
 # [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.1.1...v1.2.0) (2020-04-14)
 
 
