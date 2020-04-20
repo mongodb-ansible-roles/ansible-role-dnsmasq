@@ -1,0 +1,23 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - capabilities:
+      - SYS_ADMIN
+    command: /sbin/init
+    dockerfile: dockerfiles/Docker.ppc64le
+    image: ppc64le/centos
+    name: instance
+    pre_build_image: false
+    privileged: true
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+verifier:
+  name: testinfra

@@ -51,14 +51,21 @@
     state: restarted
   changed_when: false
 
+- name: Check if dhclient configuration exists
+  stat:
+    path: /etc/dhcp/dhclient.conf
+  register: result
+
 - name: Configure the default DNS resolver as a fallback option
   blockinfile:
     block: supersede domain-name-servers 127.0.0.1, 169.254.169.253;
     insertafter: EOF
     path: /etc/dhcp/dhclient.conf
     state: present
+  when: result.stat.exists
 
 - name: Apply changes to dhclient
   command: dhclient
   changed_when: false
   ignore_errors: true
+  when: result.stat.exists

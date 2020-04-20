@@ -128,3 +128,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
