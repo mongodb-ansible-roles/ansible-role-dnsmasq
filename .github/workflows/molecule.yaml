@@ -13,11 +13,10 @@ jobs:
       - name: Enable execution of different multi-architecture containers
         run: docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
       - env:
-          AWS_ACCESS_KEY_ID: '${{ secrets.AWS_ACCESS_KEY_ID }}'
-          AWS_SECRET_ACCESS_KEY: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
-          EC2_REGION: '${{ secrets.EC2_REGION }}'
+          AWS_ACCESS_KEY_ID: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          AWS_SECRET_ACCESS_KEY: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          EC2_REGION: "${{ secrets.EC2_REGION }}"
         run: molecule test --all
 name: Molecule Test
-'on':
-  - push
+"on":
   - pull_request
