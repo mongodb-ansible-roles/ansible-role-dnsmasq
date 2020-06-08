@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.3.0...v1.4.0) (2020-06-08)
+
+
+### Features
+
+* add Arch Linux platform ([cc59094](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/cc59094dfe23cb3e9d5d6f91153058f6dd341c0e))
+
 # [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.2.0...v1.3.0) (2020-04-20)
 
 
