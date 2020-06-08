@@ -15,7 +15,7 @@ platforms:
     ssh_username: ubuntu
     vpc_subnet_id: subnet-0fdf330139d3de49f
   - name: rhel8
-    image: ami-0551d2acb56d6e88c
+    image: ami-098bb5d92c8886ca1
     instance_type: t2.small
     ssh_username: ec2-user
     vpc_subnet_id: subnet-0fdf330139d3de49f

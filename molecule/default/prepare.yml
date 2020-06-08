@@ -15,3 +15,9 @@
       become: true
       changed_when: false
       ignore_errors: true
+
+    - name: Upgrade all packages that are out-of-date
+      raw: pacman -Syu --noconfirm
+      become: true
+      changed_when: false
+      ignore_errors: true
