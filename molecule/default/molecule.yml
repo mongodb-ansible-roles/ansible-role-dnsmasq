@@ -22,7 +22,7 @@ platforms:
   - name: arch-linux
     image: ami-01d988fc8ed4684e6
     instance_type: t2.small
-    ssh_username: ec2-user
+    ssh_username: arch
     vpc_subnet_id: subnet-0fdf330139d3de49f
 provisioner:
   log: true
