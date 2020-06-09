@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.4.0...v1.4.1) (2020-06-09)
+
+
+### Bug Fixes
+
+* update SSH user for Arch Linux ([#5](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/issues/5)) ([8fd3d24](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/8fd3d242401dd4e11acf528ffe96939ca4a12f13))
+
 # [1.4.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.3.0...v1.4.0) (2020-06-08)
 
 
