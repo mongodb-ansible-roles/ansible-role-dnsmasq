@@ -8,6 +8,7 @@
   file:
    path: "/etc/resolv.conf"
    state: absent
+  changed_when: false
 
 - name: Create /etc/resolv.conf
   template:
