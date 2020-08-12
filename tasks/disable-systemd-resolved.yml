@@ -2,3 +2,14 @@
   systemd:
     name: systemd-resolved
     enabled: no
+    state: stopped
+
+- name: Remove resolve.conf symlink
+  file:
+   path: "/etc/resolv.conf"
+   state: absent
+
+- name: Create /etc/resolv.conf
+  template:
+    dest: /etc/resolv.conf
+    src: etc/resolv.conf.j2
