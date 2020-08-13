@@ -1,1 +1,4 @@
 nameserver 127.0.0.1
+{% if dnsmasq_search is defined %}
+search {{ dnsmasq_search }}
+{% endif %}
