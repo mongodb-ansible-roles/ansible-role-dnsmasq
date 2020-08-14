@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.4.1...v1.5.0) (2020-08-14)
+
+
+### Features
+
+* **BUILD-11536:** disable systemd-resolved on ubuntu18.04 ([#6](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/issues/6)) ([122f44b](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/122f44be3b82b57cc5ce3727fae923c605ab3467))
+
 ## [1.4.1](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.4.0...v1.4.1) (2020-06-09)
 
 
