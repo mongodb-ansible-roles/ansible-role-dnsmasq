@@ -1,7 +1,7 @@
 - name: Disable systemd-resolved
   systemd:
     name: systemd-resolved
-    enabled: no
+    enabled: false
     state: stopped
 
 - name: Remove resolve.conf symlink
@@ -14,4 +14,5 @@
   template:
     dest: /etc/resolv.conf
     src: etc/resolv.conf.j2
+    mode: 0644
   changed_when: false
