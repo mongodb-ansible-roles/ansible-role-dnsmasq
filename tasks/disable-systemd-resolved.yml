@@ -14,3 +14,4 @@
   template:
     dest: /etc/resolv.conf
     src: etc/resolv.conf.j2
+  changed_when: false
