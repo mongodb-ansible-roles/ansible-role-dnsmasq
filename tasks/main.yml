@@ -30,6 +30,8 @@
     backup: true
     dest: /etc/dnsmasq.conf
     src: etc/dnsmasq.conf
+    group: "{{ dnsmasq_group }}"
+    mode: 0644
   notify:
     - restart dnsmasq
 
@@ -37,6 +39,8 @@
   template:
     dest: /etc/resolv.dnsmasq
     src: etc/resolv.dnsmasq.j2
+    group: "{{ dnsmasq_group }}"
+    mode: 0644
   notify:
     - restart dnsmasq
 
@@ -69,3 +73,9 @@
   changed_when: false
   ignore_errors: true
   when: result.stat.exists
+
+- name: Disable systemd-resolved if needed
+  include_tasks: disable-systemd-resolved.yml
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_major_version is version("18", ">=")
