@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.5.0...v1.5.1) (2020-08-17)
+
+
+### Bug Fixes
+
+* route aws zones via aws dns server on ec2 ([#7](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/issues/7)) ([8d13e66](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/8d13e66cf70e1b37bbd1b93d5b24626f428555fe))
+
 # [1.5.0](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.4.1...v1.5.0) (2020-08-14)
 
 
