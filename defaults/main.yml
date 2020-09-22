@@ -14,4 +14,6 @@ dnsmasq_neg_ttl: 60
 dnsmasq_port: 53
 dnsmasq_user: dnsmasq
 dnsmasq_search: ec2.internal
+dnsmasq_search_domains:
+  - pic.build.10gen.cc
 dnsmasq_ec2: false

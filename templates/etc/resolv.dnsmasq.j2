@@ -1,4 +1,7 @@
-# Ansible managed
+{{ ansible_managed }}
+{% for search in dnsmasq_search_domains %}
+search {{ search }}
+{% endfor %}
 {% for nameserver in dnsmasq_nameservers %}
 nameserver {{ nameserver }}
 {% endfor %}
