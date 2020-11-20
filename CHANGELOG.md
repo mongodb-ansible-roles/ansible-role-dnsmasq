@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.5.1...v1.5.2) (2020-11-20)
+
+
+### Bug Fixes
+
+* **BUILD-12363:** reverse lookup on ec2 instances ([#9](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/issues/9)) ([1277416](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/commit/1277416864bcff6609b78c741423c91ad6c0c248))
+
 ## [1.5.1](https://github.com/mongodb-ansible-roles/ansible-role-dnsmasq/compare/v1.5.0...v1.5.1) (2020-08-17)
 
 
