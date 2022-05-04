@@ -49,7 +49,6 @@
     state: present
     insertafter: '^search '
     line: 'nameserver 127.0.0.1'
-  tags: test
   when:
     - ansible_os_family == "RedHat"
     - ansible_machine == "s390x"
