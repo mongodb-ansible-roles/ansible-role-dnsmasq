@@ -43,6 +43,16 @@
     mode: 0644
   notify:
     - restart dnsmasq
+- name: Insert resolv.conf reference for certain s390x hosts
+  ansible.builtin.lineinfile:
+    path: /etc/resolv.conf
+    state: present
+    insertafter: '^search '
+    line: 'nameserver 127.0.0.1'
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_machine == "s390x"
+    - ansible_distribution_version == "8.3"
 
   # The dnsmasq service is already started when installed via a package
   # manager. It is required to restart the service to ensure that the
